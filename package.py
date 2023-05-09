@@ -13,8 +13,6 @@ with scope('config') as c:
     c.release_packages_path = os.environ['SSE_REZ_REPO_RELEASE_EXT']
 
 requires = [
-    "rapidjson-1.1.0",
-    "pybind11-2.6.2",
     "imath-3.1.5",
 ]
 
