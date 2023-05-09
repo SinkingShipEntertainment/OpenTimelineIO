@@ -19,3 +19,6 @@ xcuserdata/
 docs/api
 docs/_build
 .tox
+
+# SSE
+_rez_build

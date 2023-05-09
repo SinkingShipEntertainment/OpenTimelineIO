@@ -19,6 +19,8 @@ set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "")
 
 project(OpenTimelineIO VERSION ${OTIO_VERSION} LANGUAGES C CXX)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+
 #------------------------------------------------------------------------------
 # Options
 # Add all options and settings here for all subprojects to aid in project
@@ -26,13 +28,13 @@ project(OpenTimelineIO VERSION ${OTIO_VERSION} LANGUAGES C CXX)
 
 # Installation options
 option(OTIO_CXX_INSTALL               "Install the C++ bindings" ON)
-option(OTIO_PYTHON_INSTALL            "Install the Python bindings" OFF)
+option(OTIO_PYTHON_INSTALL            "Install the Python bindings" ON)
 option(OTIO_DEPENDENCIES_INSTALL      "Install OTIO's C++ header dependencies (any and nonstd)" ON)
 option(OTIO_INSTALL_PYTHON_MODULES    "Install OTIO pure Python modules/files" ON)
 option(OTIO_INSTALL_COMMANDLINE_TOOLS "Install the OTIO command line tools" ON)
 option(OTIO_INSTALL_CONTRIB           "Install the opentimelineio_contrib Python package" ON)
 set(OTIO_IMATH_LIBS "" CACHE STRING   "Imath library overrides to use instead of src/deps or find_package")
-option(OTIO_FIND_IMATH                "Find Imath using find_package, ignored if OTIO_IMATH_LIBS is set" OFF)
+option(OTIO_FIND_IMATH                "Find Imath using find_package, ignored if OTIO_IMATH_LIBS is set" ON)
 set(OTIO_PYTHON_INSTALL_DIR "" CACHE STRING "Python installation dir (such as the site-packages dir)")
 
 # Build options
